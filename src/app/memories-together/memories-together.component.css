@@ -1,0 +1,102 @@
+
+
+
+/* memories-together.component.css */
+/* .memories-wrapper {
+  display: flex;
+  background-color: red;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+} */
+
+.memories-wrapper {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  height: 100dvh;
+  align-items: center; 
+  background-color: #ffcccc; /* Adjust the background color as needed */
+  border-radius: 20px; /* Adjust the border radius to control the roundness */
+  overflow: hidden;
+}
+
+.memories-wrapper::before {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: #ffcccc; /* Match the background color */
+  border-radius: 50%;
+}
+
+
+/* .memories-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.memory {
+  flex: 0 0 24%; 
+  margin: 1px; 
+  text-align: center; ]
+} 
+*/
+.memories-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.memory {
+  margin: 10px;
+}
+  .memory img {
+    width: 200px; /* Adjust as needed */
+    height: 200px; /* Maintain aspect ratio */
+  }
+  
+  .caption {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 20px;
+    font-family: cursive;
+  }
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(50%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Apply the animation to the memory elements */
+  .memory {
+    animation: slideIn 10s ease forwards;
+  }
+  @keyframes floating {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    background-color: red;
+    color: #fff;
+    animation: floating 3s infinite alternate ease-in-out;
+  }

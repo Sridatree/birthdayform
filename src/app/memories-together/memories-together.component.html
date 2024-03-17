@@ -1,0 +1,15 @@
+<div class="memories-wrapper">
+  <div class="memories-container">
+    <div class="memory" *ngFor="let memory of memories; let i = index" [style.animation-delay]="i * 5 + 's'">
+      <img [src]="memory.imageUrl" alt="Memory Image">
+      <div class="caption">{{ memory.caption }}</div>
+    </div>
+  </div>
+</div>
+<button (click)="navigateBack()">Back To The Start</button>
+<!-- <div class="memories-container">
+  <div class="memory" *ngFor="let memory of memories.slice(4)">
+    <img [src]="memory.imageUrl" alt="Memory Image">
+    <div class="caption">{{ memory.caption }}</div>
+  </div>
+</div> -->

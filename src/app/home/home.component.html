@@ -1,0 +1,58 @@
+<div class="container">
+    <router-outlet></router-outlet>
+    <div class="balloons top">
+      <div class="balloon" *ngFor="let balloon of balloons; let i = index" [@balloonAnimation]="balloon" (click)="popBalloon(i)">🎈</div>
+    </div>
+    <!-- <div class="balloons left">
+      <div class="balloon" *ngFor="let balloon of balloons; let i = index" [@balloonAnimation]="balloon"></div>
+    </div>
+    <div class="balloons right">
+      <div class="balloon" *ngFor="let balloon of balloons; let i = index" [@balloonAnimation]="balloon"></div>
+    </div> -->
+    <div class = "content">
+      <h2>🎉🎉 Happy Birthday! 🎉🎉</h2>
+      <form [formGroup]="birthdayForm" (ngSubmit)="onSubmit()">
+        <div class="question">
+          <label for="question">Are you the sexiest boyfriend in the world?</label><br>
+          <div class="button-group">
+            <button type="button" class="yes-button" (click)="selectYes()" [@moveButton]="buttonState">
+              <!-- Heart SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="#ffffff" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"/>
+              </svg>
+              Yes
+            </button>
+            <button type="button" class="no-button" (click)="toggleNopeText()">
+              <!-- Broken Heart SVG -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="#ffffff" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"/>
+              </svg>
+              No
+            </button>
+            <div class="nope-text" *ngIf="showNopeText" [@slideInOut]>Nope, YOU ARE! What you clicking No for?</div>
+        </div>
+        </div>
+      </form>
+    </div>  
+    <!-- <div class="image-container" *ngIf="showImage">
+      <img src="assets/images.png" alt="Birthday Image">
+    </div>
+    <div *ngIf="showText" >
+      <p>Tired? 😍</p>
+    </div> -->
+    <div class="balloons bottom">
+      <div class="balloon" *ngFor="let balloon of balloons; let i = index" [@balloonAnimation]="balloon" (click)="popBalloon(i)">🎈</div>
+    </div>
+  </div>
+  <app-image-modal [imageUrl]="'assets/images.png'" #imageModal></app-image-modal>
+  
+  <button class="buttonexit" (click)="goToMemories()">Memories Together</button>
+  
+  
+  <!-- Router Outlet -->
+  
+  
+  <footer>
+    <p>&copy; 2023/04/14 Sridatree ❤️ Saurabh. All rights reserved to us.</p>
+  </footer>
+  
